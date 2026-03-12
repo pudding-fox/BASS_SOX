@@ -1,0 +1,7 @@
+LIBRARY bass_sox_asio
+VERSION 2.4
+EXPORTS
+BASSplugin
+BASS_SOX_ASIO_StreamGet
+BASS_SOX_ASIO_StreamSet
+BASS_SOX_ASIO_ChannelEnable

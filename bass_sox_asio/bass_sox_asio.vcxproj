@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="bass_sox_asio.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bass_sox_asio.c" />
+  </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='Win32'">
+    <Library Include="..\lib\x86\bass.lib" />
+    <Library Include="..\lib\x86\bassasio.lib" />
+    <Library Include="..\lib\x86\bass_sox.lib" />
+    <Library Include="..\lib\x86\libsoxr.lib" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)'=='x64'">
+    <Library Include="..\lib\x64\bass.lib" />
+    <Library Include="..\lib\x64\bassasio.lib" />
+    <Library Include="..\lib\x64\bass_sox.lib" />
+    <Library Include="..\lib\x64\libsoxr.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bass_sox_asio.def" />
+  </ItemGroup>
+	<ImportGroup Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="..\Common.props" />
+	</ImportGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3D8C2171-36CB-4081-BF0C-F53D37772A65}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>_USRDLL;BASS_SOX_ASIO_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>bass_sox_asio.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

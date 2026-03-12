@@ -1,0 +1,11 @@
+LIBRARY bass_sox
+VERSION 2.4
+EXPORTS
+BASSplugin
+BASS_SOX_StreamCreate
+BASS_SOX_StreamBuffer
+BASS_SOX_StreamBufferClear
+BASS_SOX_StreamBufferLength
+BASS_SOX_ChannelSetAttribute
+BASS_SOX_ChannelGetAttribute
+BASS_SOX_GetLastError

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ClCompile Include="cr.c" />
+		<ClCompile Include="cr32.c" />
+		<ClCompile Include="cr32s.c" />
+		<ClCompile Include="cr64.c" />
+		<ClCompile Include="cr64s.c" />
+		<ClCompile Include="data-io.c" />
+		<ClCompile Include="dbesi0.c" />
+		<ClCompile Include="fft4g32.c" />
+		<ClCompile Include="fft4g64.c" />
+		<ClCompile Include="filter.c" />
+		<ClCompile Include="pffft32s.c" />
+		<ClCompile Include="pffft64s.c" />
+		<ClCompile Include="soxr.c" />
+		<ClCompile Include="util32s.c" />
+		<ClCompile Include="util64s.c" />
+		<ClCompile Include="vr32.c" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="soxr-config.h" />
+	</ItemGroup>
+	<ImportGroup Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="..\Common.props" />
+	</ImportGroup>
+	<PropertyGroup Label="Globals">
+		<ProjectGuid>{87bfcfb1-0732-44ab-b28d-bad323ad2446}</ProjectGuid>
+	</PropertyGroup>
+	<PropertyGroup Label="Configuration">
+		<ConfigurationType>StaticLibrary</ConfigurationType>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+	<ItemDefinitionGroup>
+		<ClCompile>
+			<PreprocessorDefinitions>_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;SOXR_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+	</ItemDefinitionGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Common.props" />
+  </ImportGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{64EFADD5-C089-43FD-9AF6-F01D934FD6B4}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>_USRDLL;BASS_SOX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>bass_sox.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="resampler_updater.c" />
+    <ClCompile Include="bass_sox.c" />
+    <ClCompile Include="resampler.c" />
+    <ClCompile Include="resampler_buffer.c" />
+    <ClCompile Include="resampler_lock.c" />
+    <ClCompile Include="resampler_registry.c" />
+    <ClCompile Include="resampler_settings.c" />
+    <ClCompile Include="resampler_soxr.c" />
+    <ClCompile Include="ring_buffer.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\bass\bass.h" />
+    <ClInclude Include="..\bass\bass_addon.h" />
+    <ClInclude Include="resampler_updater.h" />
+    <ClInclude Include="bass_sox.h" />
+    <ClInclude Include="resampler.h" />
+    <ClInclude Include="resampler_buffer.h" />
+    <ClInclude Include="resampler_lock.h" />
+    <ClInclude Include="resampler_registry.h" />
+    <ClInclude Include="resampler_settings.h" />
+    <ClInclude Include="resampler_soxr.h" />
+    <ClInclude Include="ring_buffer.h" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)'=='Win32'">
+    <Library Include="..\lib\x86\bass.lib" />
+    <Library Include="..\lib\x86\libsoxr.lib" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)'=='x64'">
+    <Library Include="..\lib\x64\bass.lib" />
+    <Library Include="..\lib\x64\libsoxr.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bass_sox.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

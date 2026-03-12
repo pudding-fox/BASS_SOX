@@ -1,0 +1,18 @@
+﻿<Project>
+	<ItemGroup>
+		<None Include="$(MSBuildThisFileDirectory)\x86\bass_sox.dll" Link="x86\bass_sox.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)\x64\bass_sox.dll" Link="x64\bass_sox.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="$(MSBuildThisFileDirectory)\x86\bass_sox_asio.dll" Link="x86\bass_sox_asio.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="$(MSBuildThisFileDirectory)\x64\bass_sox_asio.dll" Link="x64\bass_sox_asio.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+</Project>
